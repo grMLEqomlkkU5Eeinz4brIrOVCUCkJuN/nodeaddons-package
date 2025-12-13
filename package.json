@@ -1,0 +1,46 @@
+{
+  "name": "cppintegrations",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "npm run build:native && npm run build:ts",
+    "build:native": "node-gyp rebuild",
+    "build:ts": "tsc",
+    "build:debug": "node-gyp rebuild --debug",
+    "clean": "node-gyp clean && rimraf dist",
+    "dev": "npm run build && nodemon dist/index.js",
+    "test": "npm run build && node test/test.js",
+    "format:cc": "find . -name \"*.cc\" -exec clang-format -i {} \\;",
+    "format:all": "find . \\( -name \"*.cc\" -o -name \"*.cpp\" -o -name \"*.h\" \\) -exec clang-format -i {} \\;",
+    "format": "find . \\( -name \"*.cc\" -o -name \"*.cpp\" -o -name \"*.h\" \\) -exec clang-format -i {} \\;"
+  },
+  "gypfile": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.0.1",
+    "eslint": "^9.39.1",
+    "jest": "^30.0.5",
+    "node-api-headers": "^1.7.0",
+    "nodemon": "^3.1.11",
+    "rimraf": "^6.1.2",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.49.0"
+  },
+  "dependencies": {
+    "node-addon-api": "^8.5.0"
+  }
+}
