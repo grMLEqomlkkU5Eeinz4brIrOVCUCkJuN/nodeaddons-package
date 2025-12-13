@@ -1,0 +1,36 @@
+# Development files
+node_modules/
+*.log
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+
+# Build artifacts (keep prebuilds)
+build/
+*.tsbuildinfo
+
+# Test files
+test/
+*.test.js
+*.spec.js
+
+# Source files (TypeScript sources are in lib/)
+lib/*.ts
+tsconfig.json
+
+# CI/CD
+.github/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+!README.md

@@ -2,6 +2,7 @@
 dist/
 build/
 *.node
+prebuilds/
 
 # Dependencies
 node_modules/
